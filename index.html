@@ -8,10 +8,6 @@
         <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
 
         <script>
-            function tugi(){
-              window.location.href = "https://18j5141.github.io/meiseisteamsound6/"
-            }
-
             AFRAME.registerComponent('test', {
               init: function () {
                 console.log(this);
@@ -19,25 +15,10 @@
                 element.addEventListener('mouseenter', function () {
                   console.log('mouseenter');
                   element.components.sound.playSound();
-                  document.getElementById("text").setAttribute("value",this.getAttribute("id"));
                 });
                 element.addEventListener('mouseleave', function () {
                   console.log('mouseleave');
                   element.components.sound.pauseSound();
-                  document.getElementById("text").setAttribute("value","Sound review");
-                });
-              }
-            });
-
-            AFRAME.registerComponent('final', {
-              init: function () {
-                console.log(this);
-                const element = this.el;
-                element.addEventListener('mouseenter', function () {
-                  console.log('mouseenter');
-                  //element.components.sound.playSound();
-                  document.getElementById("text").setAttribute("value","next bonus scene");
-                  setTimeout(tugi, 5000);
                 });
               }
             });
@@ -86,24 +67,20 @@
         <a-sky radius="200" theta-length="180" material="shader:gradientshader;topColor:#FF4500;bottomColor:#000080"id="sky"></a-sky>
         
 
-        <a-box id="Renchakuji Temple" rotation="0 -45 0" width="3.75" height="3.75" depth="0"  position="5.95 0 -5.05" color="000000"
+        <a-box id="box1" rotation="0 -45 0" width="3.75" height="3.75" depth="0"  position="5.95 0 -5.05" color="000000"
            material="opacity: 1;" sound="src: #annai; loop:true;" src="#logo" test>
         </a-box>
 
-        <a-box id="Jogasaki Coast1" rotation="0 -45 0" width="0" height="3.75" depth="3.75" position="5.05 0 5.95" color="#FFFFFF"
+        <a-box id="box2" rotation="0 -45 0" width="0" height="3.75" depth="3.75" position="5.05 0 5.95" color="#FFFFFF"
            material="opacity: 1;" sound="src: #nami1; loop:true;" src="#logo" test>
         </a-box>
 
-        <a-box id="Jogasaki Coast2" rotation="0 -45 0" width="3.75" height="3.75" depth="0" position="-5.95 0 5.05" color="#FFFFFF"
+        <a-box id="box3" rotation="0 -45 0" width="3.75" height="3.75" depth="0" position="-5.95 0 5.05" color="#FFFFFF"
            material="opacity: 1;" sound="src: #nami2; loop:true;" src="#logo" test>
         </a-box>
 
-        <a-box id="Kadowaki Cape Suspension Bridge" rotation="0 -45 0" width="0" height="3.75" depth="3.75" position="-5.05 0 -5.95" color="#FFFFFF"
+        <a-box id="box4" rotation="0 -45 0" width="0" height="3.75" depth="3.75" position="-5.05 0 -5.95" color="#FFFFFF"
            material="opacity: 1;" sound="src: #nami3; loop:true;" src="#logo" test>
-        </a-box>
-
-        <a-box id="box" rotation="40 0 0" width="4" height="4" depth="0"  position="0 10 -7" color="000000"
-           material="opacity: 1;" src="#logo" final>
         </a-box>
 
         <a-image src="#tera_1" width="4" height="4" rotation="0 -45 0" position="6 4.1 -5"></a-image>
@@ -129,10 +106,6 @@
         <a-image src="#umi3_3" width="4" height="4" rotation="0, 45, 0" position="-2 4 -9"></a-image>
         <a-image src="#umi3_4" width="4" height="4" rotation="0, 45, 0" position="-8 -4.2 -3"></a-image>
         <a-image src="#umi3_5" width="4" height="4" rotation="0, 45, 0" position="-2 -4.2 -9"></a-image>
-
-        <a-entity camera look-controls position="0 1.7 0">
-          <a-text id = "text" value="Sound review" position = "0 0 -1" scale = "0.5 0.5 0.5" align = "center" color="#FFFFFF" ></a-text>
-        </a-entity>
 
       </a-scene>
     </body>
